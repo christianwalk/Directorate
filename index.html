@@ -3,99 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DIRECTORATE MEETING – DPSS</title>
-
+  <title>Directorate Meeting</title>
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      /* bright, appealing palette */
-      --c1:#ff6b6b;   /* coral red   */
-      --c2:#feca57;   /* mellow apricot */
-      --c3:#48dbfb;   /* sky blue */
-      --white:#ffffff;
+    :root {
+      --clr-primary: #003d99;
+      --clr-secondary: #8e2de2;
+      --clr-accent: #00c9ff;
+      --clr-bg: #f0f4f8;
+      --clr-card: #ffffff;
     }
 
-    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
-
-    body{
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
-      background:linear-gradient(135deg,var(--c1) 0%,var(--c2) 45%,var(--c3) 100%);
-      color:var(--white);
-      padding:4rem 1rem;
-      text-align:center;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", Arial, sans-serif;
     }
 
-    /* Main header */
-    h1{
-      font-size:3.3rem;
-      letter-spacing:1.5px;
-      text-shadow:3px 3px 6px rgba(0,0,0,.35);
-      margin-bottom:3rem;
+    body {
+      background: var(--clr-bg);
+      color: #333;
+      line-height: 1.6;
     }
 
-    /* Agenda card */
-    #agenda{
-      width:100%;
-      max-width:900px;
-      background:rgba(255,255,255,.15);
-      backdrop-filter:blur(5px);
-      border-radius:18px;
-      padding:3rem 2rem;
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-    }
-    #agenda h2{
-      font-size:2.5rem;
-      margin-bottom:1.4rem;
-      text-shadow:2px 2px 4px rgba(0,0,0,.35);
-    }
-    #agenda ol{
-      list-style-position:inside;
-      line-height:2.1;
-      font-size:1.4rem;
-    }
-    #agenda li{
-      margin:0.8rem 0;
+    /* ---------- Header ---------- */
+    .header {
+      background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 60px;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Footer */
-    footer{
-      margin-top:auto;
-      font-size:1rem;
-      opacity:.85;
-      padding-top:3rem;
+    .header::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+      transform: rotate(45deg);
     }
 
-    /* Responsive tweaks */
-    @media (max-width:480px){
-      h1{font-size:2.4rem;}
-      #agenda h2{font-size:2rem;}
-      #agenda ol{font-size:1.2rem;}
+    .header h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* ---------- Section ---------- */
+    .section {
+      max-width: 960px;
+      margin: -40px auto 60px;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: var(--clr-primary);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .agenda-list {
+      list-style: none;
+      display: grid;
+      gap: 25px;
+    }
+
+    .agenda-item {
+      background: var(--clr-card);
+      border-radius: 14px;
+      padding: 25px 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .agenda-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .agenda-number {
+      background: linear-gradient(135deg, var(--clr-accent), var(--clr-secondary));
+      color: #fff;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .agenda-text {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+      background: var(--clr-primary);
+      color: #fff;
+      text-align: center;
+      padding: 25px 20px;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
     }
   </style>
 </head>
 <body>
+  <header class="header">
+    <h1>Directorate Meeting</h1>
+  </header>
 
-  <h1>DIRECTORATE MEETING – DPSS</h1>
-
-  <section id="agenda">
+  <section class="section">
     <h2>Agenda</h2>
-    <ol>
-      <li>Prayer</li>
-      <li>Communication from Chair — HOD/DSS &amp; Reactions</li>
-      <li>Update&nbsp;and&nbsp;Discussion of <strong>BEC&nbsp;2025</strong> (Phase&nbsp;1, Phase&nbsp;2, Preparations, Roadmap, etc.)</li>
-      <li>Way Forward &amp; Closure</li>
+    <ol class="agenda-list">
+      <li class="agenda-item">
+        <span class="agenda-number">1</span>
+        <span class="agenda-text">Prayer</span>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-number">2</span>
+        <span class="agenda-text">Communication from Chair &amp; Reactions</span>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-number">3</span>
+        <span class="agenda-text">Update &amp; Discussion of BEC&nbsp;2025 (Phase 1, Phase 2 Preparations, Roadmap, etc) — <strong>Audrey&nbsp;Kemigisha</strong></span>
+      </li>
+      <li class="agenda-item">
+        <span class="agenda-number">4</span>
+        <span class="agenda-text">Way Forward &amp; Closure</span>
+      </li>
     </ol>
   </section>
 
-  <footer>
-    © 2025 DPSS Directorate
+  <footer class="footer">
+    <p>&copy; 2025 Directorate Meeting</p>
   </footer>
-
 </body>
 </html>
