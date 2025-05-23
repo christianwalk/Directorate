@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIRECTORATE MEETING – DPSS</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* bright, appealing palette */
+      --c1:#ff6b6b;   /* coral red   */
+      --c2:#feca57;   /* mellow apricot */
+      --c3:#48dbfb;   /* sky blue */
+      --white:#ffffff;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;}
+
+    body{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      background:linear-gradient(135deg,var(--c1) 0%,var(--c2) 45%,var(--c3) 100%);
+      color:var(--white);
+      padding:4rem 1rem;
+      text-align:center;
+    }
+
+    /* Main header */
+    h1{
+      font-size:3.3rem;
+      letter-spacing:1.5px;
+      text-shadow:3px 3px 6px rgba(0,0,0,.35);
+      margin-bottom:3rem;
+    }
+
+    /* Agenda card */
+    #agenda{
+      width:100%;
+      max-width:900px;
+      background:rgba(255,255,255,.15);
+      backdrop-filter:blur(5px);
+      border-radius:18px;
+      padding:3rem 2rem;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    #agenda h2{
+      font-size:2.5rem;
+      margin-bottom:1.4rem;
+      text-shadow:2px 2px 4px rgba(0,0,0,.35);
+    }
+    #agenda ol{
+      list-style-position:inside;
+      line-height:2.1;
+      font-size:1.4rem;
+    }
+    #agenda li{
+      margin:0.8rem 0;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:auto;
+      font-size:1rem;
+      opacity:.85;
+      padding-top:3rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width:480px){
+      h1{font-size:2.4rem;}
+      #agenda h2{font-size:2rem;}
+      #agenda ol{font-size:1.2rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>DIRECTORATE MEETING – DPSS</h1>
+
+  <section id="agenda">
+    <h2>Agenda</h2>
+    <ol>
+      <li>Prayer</li>
+      <li>Communication from Chair — HOD/DSS &amp; Reactions</li>
+      <li>Update&nbsp;and&nbsp;Discussion of <strong>BEC&nbsp;2025</strong> (Phase&nbsp;1, Phase&nbsp;2, Preparations, Roadmap, etc.)</li>
+      <li>Way Forward &amp; Closure</li>
+    </ol>
+  </section>
+
+  <footer>
+    © 2025 DPSS Directorate
+  </footer>
+
+</body>
+</html>
